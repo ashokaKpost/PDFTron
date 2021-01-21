@@ -3,6 +3,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  /* background: #000;
+  opacity: 0.8; */
 }
 
 .App .header {
@@ -10,7 +12,7 @@
   height: 60px;
   padding: 8px 8px 8px 16px;
   box-sizing: border-box;
-  background: #00a5e4;
+  background: #ffa500;
   font-size: 1.2em;
   line-height: 44px;
   color: white;

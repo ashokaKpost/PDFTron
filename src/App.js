@@ -1,45 +1,86 @@
-import React, { useRef, useEffect } from 'react';
-import WebViewer from '@pdftron/webviewer';
-import './App.css';
+import React from "react";
+import "./App.css";
+import PdfTool from "./components/PdfTool/PdfTool";
+import HomeScreen from "./views/HomeScreen";
 
 const App = () => {
-  const viewer = useRef(null);
-
-  // if using a class, equivalent of componentDidMount 
-  useEffect(() => {
-    WebViewer(
-      {
-        path: "/webviewer/lib",
-        pdftronServer: "https://demo.pdftron.com/",
-        initialDoc:
-          "https://firebasestorage.googleapis.com/v0/b/studied-theater-295812.appspot.com/o/iMac%20(21.5-inch%2C%202017)%20-%20Technical%20Specifications.pdf?alt=media&token=f8f7c189-59d6-4b4f-a416-3b708bf8002d",
-      },
-      viewer.current
-    ).then((instance) => {
-      const { docViewer, Annotations } = instance;
-      const annotManager = docViewer.getAnnotationManager();
-
-      docViewer.on("documentLoaded", () => {
-        const rectangleAnnot = new Annotations.RectangleAnnotation();
-        rectangleAnnot.PageNumber = 1;
-        // values are in page coordinates with (0, 0) in the top left
-        rectangleAnnot.X = 100;
-        rectangleAnnot.Y = 150;
-        rectangleAnnot.Width = 200;
-        rectangleAnnot.Height = 50;
-        rectangleAnnot.Author = annotManager.getCurrentUser();
-
-        annotManager.addAnnotation(rectangleAnnot);
-        // need to draw the annotation otherwise it won't show up until the page is refreshed
-        annotManager.redrawAnnotation(rectangleAnnot);
-      });
-    });
-  }, []);
+  const [state, setState] = React.useState();
+  const [url, setUrl] = React.useState();
 
   return (
     <div className="App">
-      <div className="header">React sample</div>
-      <div className="webviewer" ref={viewer}></div>
+      <HomeScreen />
+      {/* {!url && (
+        <React.Fragment>
+          <div
+            style={{
+              marginTop: "400px",
+              justifyContent: "center",
+              alignItems: "center",
+              textAlign: "center",
+            }}
+          >
+            <div>
+              <h4 style={{
+                color:'#000'
+              }}>Please enter url here!</h4>
+            </div>
+            <input
+              type={"text"}
+              value={state}
+              onChange={(e) => setState(e.target.value)}
+              name={"url"}
+              style={{
+                width: "500px",
+                height: "30px",
+                borderRadius: "15px",
+                border: "1px solid #d2d2d2",
+              }}
+            />
+            <button
+              style={{
+                marginLeft: "10px",
+                height: "35px",
+                width: "100px",
+                backgroundColor: "#00a5e4",
+                borderRadius: "15px",
+                border: "none",
+                color: "#fff",
+                fontWeight: "600",
+              }}
+              onClick={() => setUrl(state)}
+            >
+              Submit
+            </button>
+          </div>
+        </React.Fragment>
+      )}
+
+      {url && url !== "" && (
+        <React.Fragment>
+          <PdfTool url={url} />
+          <button
+            style={{
+              position: "absolute",
+              right: "10px",
+              top: "10px",
+              height: "35px",
+              width: "100px",
+              backgroundColor: "#fff",
+              borderRadius: "15px",
+              border: "none",
+              color: "#ffa500",
+              fontWeight: "600",
+            }}
+            onClick={() => {
+              setUrl("");
+              setState("");
+            }}
+          >
+            Cancel
+          </button>
+        </React.Fragment>
+      )} */}
     </div>
   );
 };
