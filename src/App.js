@@ -9,15 +9,17 @@ const App = () => {
   useEffect(() => {
     WebViewer(
       {
-        path: '/webviewer/lib',
-        initialDoc: '/files/PDFTRON_about.pdf',
+        path: "/webviewer/lib",
+        pdftronServer: "https://demo.pdftron.com/",
+        initialDoc:
+          "https://firebasestorage.googleapis.com/v0/b/studied-theater-295812.appspot.com/o/iMac%20(21.5-inch%2C%202017)%20-%20Technical%20Specifications.pdf?alt=media&token=f8f7c189-59d6-4b4f-a416-3b708bf8002d",
       },
-      viewer.current,
+      viewer.current
     ).then((instance) => {
       const { docViewer, Annotations } = instance;
       const annotManager = docViewer.getAnnotationManager();
 
-      docViewer.on('documentLoaded', () => {
+      docViewer.on("documentLoaded", () => {
         const rectangleAnnot = new Annotations.RectangleAnnotation();
         rectangleAnnot.PageNumber = 1;
         // values are in page coordinates with (0, 0) in the top left
