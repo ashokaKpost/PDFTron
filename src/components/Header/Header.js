@@ -9,8 +9,9 @@ const Header = () => {
   return (
     <div style={{ position: "fixed", width: "100%", zIndex: 3 }}>
       <Navbar
+        className={"headerBackground"}
         style={{
-          backgroundColor: "#3f3348",
+          // backgroundColor: "#007bff",
           flexDirection: "row",
           justifyContent: "space-between",
         }}
@@ -23,24 +24,30 @@ const Header = () => {
             width: "120px",
             height: "50px",
             marginLeft: "10px",
+            color: 'tint("#006600")',
           }}
         />
 
         <div>
           <h6
             style={{
-              fontSize: 14,
+              fontSize: 18,
               color: "#fff",
               fontWeight: "600",
               letterSpacing: 0.6,
             }}
           >
-            St'Mary Higher secoundary school
+            {"Vidya Mandir Senior Secondary School".toUpperCase()}
           </h6>
         </div>
         <div>
           <span
-            style={{ color: "#fff", textAlign: "center", marginRight: "20px" }}
+            style={{
+              color: "#fff",
+              textAlign: "center",
+              marginRight: "20px",
+              fontWeight: "bold",
+            }}
           >
             Abinaya Sekar
           </span>

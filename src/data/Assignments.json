@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Electric Charges and Fields",
+    "subject": "Physics",
+    "_id": "001",
+    "class": "XII",
+    "section": "A",
+    "finalDate": "23-01-2021",
+    "assignmentDate": "15-01-2021"
+  },
+  {
+    "name": "Current Electricity",
+    "subject": "Physics",
+    "_id": "002",
+    "class": "XII",
+    "section": "B",
+    "finalDate": "26-01-2021",
+    "assignmentDate": "18-01-2021"
+  },
+  {
+    "name": "Units and Measurements",
+    "subject": "Physics",
+    "_id": "003",
+    "class": "XI",
+    "section": "C",
+    "finalDate": "01-02-2021",
+    "assignmentDate": "20-01-2021"
+  },
+  {
+    "name": "Systems of Particles and Rotational Motion",
+    "subject": "Physics",
+    "_id": "004",
+    "class": "XI",
+    "section": "A",
+    "finalDate": "28-01-2021",
+    "assignmentDate": "15-01-2021"
+  }
+]

@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import WebViewer from "@pdftron/webviewer";
+import { Button, Col, Row } from "reactstrap";
 
 
 function PdfTool({ url , assignment}) {
@@ -45,10 +46,56 @@ function PdfTool({ url , assignment}) {
         flexDirection: "column",
       }}
     >
-      <div className="header" style={{marginTop:'5px', textAlign:'center',}}>
-        {assignment}
-        </div>
-      <div className="webviewer" ref={viewer}></div>
+      <div className="header" style={{ marginTop: "5px", textAlign: "center" }}>
+        <Row>
+          <Col lg={4}>
+            <span style={{ fontSize: 15, fontWeight: "bold", color: "gray" }}>
+              Name :{" "}
+              <span
+                style={{
+                  color: "#000",
+                }}
+              >
+                Nathakumar
+              </span>
+            </span>
+            <span
+              style={{
+                fontSize: 15,
+                marginLeft: "10px",
+                fontWeight: "bold",
+                color: "gray",
+              }}
+            >
+              Class :{" "}
+              <span
+                style={{
+                  color: "#000",
+                }}
+              >
+                XI - C
+              </span>
+            </span>
+          </Col>
+          <Col lg={4}>
+            <span style={{ fontSize: 18, fontWeight: "bold" }}>
+              Units and Measurements
+            </span>
+          </Col>
+          <Col lg={4}>
+            <Button outline color="primary" style={{}}>
+              Submit
+            </Button>
+          </Col>
+        </Row>
+      </div>
+      <div
+        className="webviewer"
+        style={{
+          boxShadow: "0px 0px 3px #999",
+        }}
+        ref={viewer}
+      ></div>
     </div>
   );
 }

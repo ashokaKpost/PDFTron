@@ -2,7 +2,7 @@ import React from "react";
 
 import StudentData from "../data/StudentData.json";
 import ProfileImage from "../assets/Deafult-Profile-Pitcher.png";
-import { Col, Input, Row } from "reactstrap";
+import { Col, Container, Row } from "reactstrap";
 
 const StudentList = () => {
   function submited(key) {
@@ -11,6 +11,10 @@ const StudentList = () => {
     switch (key) {
       case "submit":
         data = StudentData.filter((f) => f.submit === true);
+        break;
+
+      case "unsubmit":
+        data = StudentData.filter((f) => f.submit === false);
         break;
 
       case "correction":
@@ -34,54 +38,84 @@ const StudentList = () => {
     >
       <div
         className="studentheader"
-        style={{ marginTop: "5px", textAlign: "center", width: "100%" }}
+        style={{
+          marginTop: "4px",
+          textAlign: "center",
+          width: "98.2%",
+          height: "60px",
+          borderRadius: "10px",
+        }}
       >
-        <div style={{ padding: "0px" }}>
+        <Container>
           <Row>
             <Col lg={3}>
-              <p className={"studentDetailHeader1"} style={{
-                color:'#000',
-                fontWeight:'bold'
-              }}>
-                Total : {StudentData.length}
+              <p
+                className={"studentDetailHeader1"}
+                style={{
+                  color: "#000",
+                  fontWeight: "bold",
+                }}
+              >
+                TOTAL : {StudentData.length}
+              </p>
+            </Col>
+            <Col lg={2.9}>
+              <p
+                className={"studentDetailHeader1"}
+                style={{
+                  color: "#5cb85c",
+                  fontWeight: "bold",
+                }}
+              >
+                SUBMIT : {submited("submit")}
+              </p>
+            </Col>
+            <Col lg={4}>
+              <p
+                className={"studentDetailHeader1"}
+                style={{
+                  color: "#d8534f",
+                  fontWeight: "bold",
+                }}
+              >
+                UNSUBMIT : {submited("unsubmit")}
               </p>
             </Col>
             <Col lg={3}>
-              <p className={"studentDetailHeader1"} style={{
-                color:'#5cb85c',
-                fontWeight:'bold'
-              }}>
-                Submit : {submited("submit")}
-              </p>
-            </Col>
-            <Col lg={3}>
-              <p className={"studentDetailHeader1"} style={{
-                color:'#d8534f',
-                fontWeight:'bold'
-              }}>
-              Unsubmit : {submited("correction")}
-              </p>
-            </Col>
-            <Col lg={3}>
-              <p className={"studentDetailHeader1"} style={{
-                color:'#ee6305',
-                fontWeight:'bold'
-              }}>
-                Review : {submited("correction")}
+              <p
+                className={"studentDetailHeader1"}
+                style={{
+                  color: "#ee6305",
+                  // fontWeight: "bold",
+                }}
+              >
+                REVIEW : {submited("correction")}
               </p>
             </Col>
           </Row>
-        </div>
+        </Container>
       </div>
-      <div className={"studentList"} style={{ height: "780px" }}>
+      <div
+        className={"studentList"}
+        style={{
+          height: "780px",
+          borderRadius: "10px",
+
+          // backgroundColor: "#f1f3f5"
+        }}
+      >
         <div style={{ padding: "5px" }}>
           <Row>
             <Col lg={6}>
-              <span className={"studentDetailHeader"}>Name</span>
+              <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
+                Name
+              </span>
             </Col>
             <Col lg={3}></Col>
             <Col lg={3}>
-              <span className={"studentDetailHeader"}>Status</span>
+              <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
+                Status
+              </span>
             </Col>
           </Row>
           <hr />
@@ -100,26 +134,59 @@ const StudentList = () => {
                     alt={""}
                     style={{ width: "30px", height: "30px" }}
                   />
-                  <span style={{ marginLeft: "10px", fontSize: 13 }}>
+                  <span
+                    style={{
+                      marginLeft: "15px",
+                      fontSize: x.name === "Nathakumar" ? 16 : 14,
+                      fontWeight: x.name === "Nathakumar" ? "600" : null,
+                      letterSpacing: 0.5,
+                      color: x.name === "Nathakumar" ? "#007bff" : "none",
+                    }}
+                  >
                     {x.name}
                   </span>
                 </Col>
                 <Col lg={3}></Col>
                 <Col lg={2}>
-                  <div style={{
-                      width:'60px',
-                      height:'20px',
-                      paddingBottom:'25px',
+                  <div
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      // paddingBottom: "25px",
                       // backgroundColor:x.submit === true ? '#5cb85c' :'#d8534f',
-                      backgroundColor : x.correction === true ? '#ee6305' : x.submit === true? '#5cb85c' :'#d8534f',
-                      borderRadius:'10px',
-                      // marginLeft:'15px',
-                      textAlign:'center'
-                  }} className={'indicator'}>
-                    <span style={{
-                      fontSize:9, color:'#fff', fontWeight:'600'
-                    }}>{x.correction === true ? 'review' : x.submit === true? 'submit' :'unsubmit'}</span>
-                  </div>
+                      backgroundColor:
+                        x.correction === true
+                          ? "#ee6305"
+                          : x.submit === true
+                          ? "#5cb85c"
+                          : "#d8534f",
+                      borderRadius: "60px",
+                      marginLeft: "15px",
+                      marginTop: "7px",
+                      // textAlign: "center",
+                      boxShadow: "0px 0px 4px #999",
+                    }}
+                    className={"indicator"}
+                  />
+                  {/* <span
+                      style={{
+                        fontSize: 11,
+                        color: x.correction === true
+                          ? "#ee6305"
+                          : x.submit === true
+                          ? "#5cb85c"
+                          : "#d8534f",
+                          letterSpacing:0.3,
+                        fontWeight: "600",
+                      }}
+                    >
+                      {x.correction === true
+                        ? "review"
+                        : x.submit === true
+                        ? "submit"
+                        : "unsubmit"}
+                    </span> */}
+                  {/* </div> */}
                 </Col>
               </Row>
             </div>
