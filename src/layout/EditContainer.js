@@ -9,8 +9,8 @@ const EditContainer = () => {
     <Container fluid={true} style={{height:'900px', marginTop:'80px'}}>
       <Row>
         <Col lg={3}></Col>
-        <Col lg={6} style={{height:'860px', border:'1px solid #d2d2d2'}}>
-          <PdfTool url={CONFIG.FILEONE} />
+        <Col lg={6} style={{height:'860px', }}>
+          <PdfTool url={CONFIG.FILEONE} assignment={'Assignment - 4'} />
         </Col>
         <Col lg={3}>
           <StudentList />

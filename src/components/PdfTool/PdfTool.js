@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import WebViewer from "@pdftron/webviewer";
 
-function PdfTool({ url }) {
+
+function PdfTool({ url , assignment}) {
   console.log(url, "url");
   const viewer = useRef(null);
 
@@ -44,8 +45,8 @@ function PdfTool({ url }) {
         flexDirection: "column",
       }}
     >
-      <div className="header" style={{marginTop:'5px', textAlign:'center'}}>
-        React Highlighter
+      <div className="header" style={{marginTop:'5px', textAlign:'center',}}>
+        {assignment}
         </div>
       <div className="webviewer" ref={viewer}></div>
     </div>

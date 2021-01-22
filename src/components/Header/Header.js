@@ -1,26 +1,13 @@
-import React, { useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  Row,
-  Col,
-} from "reactstrap";
+import React from "react";
+import { Navbar } from "reactstrap";
 
 import Logo from "../../assets/logo11.png";
 import ProfileDefaultLogo from "../../assets/Deafult-Profile-Pitcher.png";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div style={{position:'fixed', width:'100%'}}>
+    <div style={{ position: "fixed", width: "100%", zIndex: 3 }}>
       <Navbar
         style={{
           backgroundColor: "#3f3348",
