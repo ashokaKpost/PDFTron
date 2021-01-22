@@ -49,7 +49,7 @@ function PdfTool({ url , assignment}) {
       <div className="header" style={{ marginTop: "5px", textAlign: "center" }}>
         <Row>
           <Col lg={4}>
-            <span style={{ fontSize: 15, fontWeight: "bold", color: "gray" }}>
+            <span style={{ fontSize: 15, fontFamily:'Montserrat-SemiBold', color: "gray" }}>
               Name :{" "}
               <span
                 style={{
@@ -63,7 +63,7 @@ function PdfTool({ url , assignment}) {
               style={{
                 fontSize: 15,
                 marginLeft: "10px",
-                fontWeight: "bold",
+                fontFamily:'Montserrat-SemiBold',
                 color: "gray",
               }}
             >
@@ -78,12 +78,12 @@ function PdfTool({ url , assignment}) {
             </span>
           </Col>
           <Col lg={4}>
-            <span style={{ fontSize: 18, fontWeight: "bold" }}>
+            <span style={{ fontSize: 18, fontFamily:'Montserrat-SemiBold' }}>
               Units and Measurements
             </span>
           </Col>
           <Col lg={4}>
-            <Button outline color="primary" style={{}}>
+            <Button outline color="primary" style={{fontFamily:'Montserrat-SemiBold'}}>
               Submit
             </Button>
           </Col>

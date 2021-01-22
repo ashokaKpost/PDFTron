@@ -33,7 +33,7 @@ const Header = () => {
             style={{
               fontSize: 18,
               color: "#fff",
-              fontWeight: "600",
+              fontFamily:'Montserrat-SemiBold',
               letterSpacing: 0.6,
             }}
           >
@@ -46,7 +46,7 @@ const Header = () => {
               color: "#fff",
               textAlign: "center",
               marginRight: "20px",
-              fontWeight: "bold",
+              fontFamily:'Montserrat-SemiBold'
             }}
           >
             Abinaya Sekar

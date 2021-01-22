@@ -20,7 +20,7 @@ const AssignmentDetail = () => {
           width: "98%",
           fontSize: 16,
           borderRadius: "10px",
-          fontWeight: "bold",
+          fontFamily:'Montserrat-SemiBold'
         }}
       >
         CLASSES
@@ -51,6 +51,7 @@ const AssignmentDetail = () => {
                   tag="h5"
                   style={{
                     color: x._id === "003" ? "#fff" : "none",
+                    fontFamily:'Montserrat-SemiBold'
                   }}
                 >
                   {x.class} - {x.section} - {x.subject}
@@ -70,6 +71,7 @@ const AssignmentDetail = () => {
                   style={{
                     fontSize: 14,
                     color: x._id === "003" ? "#fff" : "none",
+                    fontFamily:'Montserrat-SemiBold'
                   }}
                 >
                   {x.name}
@@ -80,6 +82,7 @@ const AssignmentDetail = () => {
                     <span
                       style={{
                         fontSize: 11.5,
+                        fontFamily:'Montserrat-SemiBold',
                         color: x._id === "003" ? "#fff" : "GrayText",
                       }}
                     >
@@ -90,6 +93,7 @@ const AssignmentDetail = () => {
                     <span
                       style={{
                         fontSize: 11.5,
+                        fontFamily:'Montserrat-SemiBold',
                         color: x._id === "003" ? "#fff" : "GrayText",
                       }}
                     >

@@ -53,7 +53,8 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#000",
-                  fontWeight: "bold",
+                  // fontWeight: "bold",
+                  fontFamily:'Montserrat-SemiBold'
                 }}
               >
                 TOTAL : {StudentData.length}
@@ -64,7 +65,7 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#5cb85c",
-                  fontWeight: "bold",
+                  fontFamily:'Montserrat-SemiBold'
                 }}
               >
                 SUBMIT : {submited("submit")}
@@ -75,7 +76,7 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#d8534f",
-                  fontWeight: "bold",
+                  fontFamily:'Montserrat-SemiBold'
                 }}
               >
                 UNSUBMIT : {submited("unsubmit")}
@@ -86,7 +87,7 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#ee6305",
-                  // fontWeight: "bold",
+                  fontFamily:'Montserrat-SemiBold'
                 }}
               >
                 REVIEW : {submited("correction")}
@@ -138,9 +139,10 @@ const StudentList = () => {
                   />
                   <span
                     style={{
+                      fontFamily:'Montserrat-SemiBold',
                       marginLeft: "15px",
                       fontSize: x.name === "Nathakumar" ? 16 : 14,
-                      fontWeight: x.name === "Nathakumar" ? "600" : null,
+                      // fontWeight: x.name === "Nathakumar" ? "600" : null,
                       letterSpacing: 0.5,
                       color: x.name === "Nathakumar" ? "#007bff" : "none",
                     }}
@@ -179,7 +181,7 @@ const StudentList = () => {
                           ? "#5cb85c"
                           : "#d8534f",
                           // letterSpacing:0.3,
-                        fontWeight: "bold",
+                          fontFamily:'Montserrat-SemiBold'
                       }}
                     >
                       {x.correction === true
