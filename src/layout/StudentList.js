@@ -2,7 +2,7 @@ import React from "react";
 
 import StudentData from "../data/StudentData.json";
 import ProfileImage from "../assets/Deafult-Profile-Pitcher.png";
-import { Col, Container, Row } from "reactstrap";
+import { Col, Container, Input, Row } from "reactstrap";
 
 const StudentList = () => {
   function submited(key) {
@@ -106,16 +106,18 @@ const StudentList = () => {
       >
         <div style={{ padding: "5px" }}>
           <Row>
-            <Col lg={6}>
-              <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
+            <Col lg={8}>
+              <Input type={"text"} placeholder={"Name"} />
+              {/* <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
                 Name
-              </span>
+              </span> */}
             </Col>
-            <Col lg={3}></Col>
-            <Col lg={3}>
-              <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
+            
+            <Col lg={4}>
+            <Input type={"text"} placeholder={"Status"} />
+              {/* <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
                 Status
-              </span>
+              </span> */}
             </Col>
           </Row>
           <hr />
@@ -148,7 +150,7 @@ const StudentList = () => {
                 </Col>
                 <Col lg={3}></Col>
                 <Col lg={2}>
-                  <div
+                  {/* <div
                     style={{
                       width: "20px",
                       height: "20px",
@@ -167,25 +169,25 @@ const StudentList = () => {
                       boxShadow: "0px 0px 4px #999",
                     }}
                     className={"indicator"}
-                  />
-                  {/* <span
+                  /> */}
+                  <span
                       style={{
-                        fontSize: 11,
+                        fontSize: 12,
                         color: x.correction === true
                           ? "#ee6305"
                           : x.submit === true
                           ? "#5cb85c"
                           : "#d8534f",
-                          letterSpacing:0.3,
-                        fontWeight: "600",
+                          // letterSpacing:0.3,
+                        fontWeight: "bold",
                       }}
                     >
                       {x.correction === true
-                        ? "review"
+                        ? "REVIEW"
                         : x.submit === true
-                        ? "submit"
-                        : "unsubmit"}
-                    </span> */}
+                        ? "SUBMIT"
+                        : "UNSUBMIT"}
+                    </span>
                   {/* </div> */}
                 </Col>
               </Row>

@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  Button,
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  CardTitle,
-  Col,
-  Row,
-} from "reactstrap";
+import { Card, CardBody, CardText, CardTitle, Col, Row } from "reactstrap";
 import AssignmentData from "../data/Assignments.json";
 
 const AssignmentDetail = () => {
