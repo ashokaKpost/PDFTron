@@ -44,7 +44,9 @@ function PdfTool({ url }) {
         flexDirection: "column",
       }}
     >
-      <div className="header" style={{marginTop:'5px'}}>React Highlighter</div>
+      <div className="header" style={{marginTop:'5px', textAlign:'center'}}>
+        React Highlighter
+        </div>
       <div className="webviewer" ref={viewer}></div>
     </div>
   );
