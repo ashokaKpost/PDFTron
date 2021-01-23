@@ -29,7 +29,7 @@ const AssignmentDetail = ({ assignmentChange, assignmentId }) => {
         style={{
           marginLeft: "8px",
           marginTop: "10px",
-          overflow: "hidden",
+          // overflow: "hidden",
           height: "800px",
         }}
       >
@@ -83,7 +83,7 @@ const AssignmentDetail = ({ assignmentChange, assignmentId }) => {
                   <Col lg={5}>
                     <span
                       style={{
-                        fontSize: 10.5,
+                        fontSize: 9.5,
                         fontFamily: "Montserrat-SemiBold",
                         color: x._id === assignmentId ? "#fff" : "GrayText",
                       }}
@@ -94,7 +94,7 @@ const AssignmentDetail = ({ assignmentChange, assignmentId }) => {
                   <Col lg={7}>
                     <span
                       style={{
-                        fontSize: 10.5,
+                        fontSize: 9.5,
                         fontFamily: "Montserrat-SemiBold",
                         color: x._id === assignmentId ? "#fff" : "GrayText",
                       }}

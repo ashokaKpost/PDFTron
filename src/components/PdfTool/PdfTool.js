@@ -31,9 +31,9 @@ function PdfTool({ url , name, studentName, className, section}) {
         rectangleAnnot.Height = 50;
         rectangleAnnot.Author = annotManager.getCurrentUser();
 
-        annotManager.addAnnotation(rectangleAnnot);
-        // need to draw the annotation otherwise it won't show up until the page is refreshed
-        annotManager.redrawAnnotation(rectangleAnnot);
+        // annotManager.addAnnotation(rectangleAnnot);
+        // // need to draw the annotation otherwise it won't show up until the page is refreshed
+        // annotManager.redrawAnnotation(rectangleAnnot);
       });
     });
   }, []);

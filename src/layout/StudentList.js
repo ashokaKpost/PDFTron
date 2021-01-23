@@ -54,6 +54,7 @@ const StudentList = ({ studentChange, name }) => {
                 style={{
                   color: "#000",
                   fontFamily: "Montserrat-SemiBold",
+                  
                 }}
               >
                 TOTAL : {StudentData.length}
@@ -135,7 +136,7 @@ const StudentList = ({ studentChange, name }) => {
                     style={{
                       fontFamily: "Montserrat-SemiBold",
                       marginLeft: "15px",
-                      fontSize: x.name === name ? 16 : 14,
+                      fontSize: 14,
                       letterSpacing: 0.5,
                       color: x.name === name ? "#007bff" : "#000",
                     }}
