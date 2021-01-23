@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardBody, CardText, CardTitle, Col, Row } from "reactstrap";
 import AssignmentData from "../data/Assignments.json";
 
-const AssignmentDetail = () => {
+const AssignmentDetail = ({ assignmentChange, assignmentId }) => {
   return (
     <div
       style={{
@@ -20,7 +20,7 @@ const AssignmentDetail = () => {
           width: "98%",
           fontSize: 16,
           borderRadius: "10px",
-          fontFamily:'Montserrat-SemiBold'
+          fontFamily: "Montserrat-SemiBold",
         }}
       >
         CLASSES
@@ -36,12 +36,13 @@ const AssignmentDetail = () => {
         {AssignmentData &&
           AssignmentData.map((x, i) => (
             <Card
+              onClick={() => assignmentChange(x)}
               style={{
                 margin: "1px",
                 marginTop: "15px",
                 border: "none",
                 boxShadow: "0px 0px 4px #999",
-                backgroundColor: x._id === "003" ? "#007bff" : "none",
+                backgroundColor: x._id === assignmentId ? "#007bff" : "#fff",
                 borderRadius: "10px",
               }}
               key={i}
@@ -50,8 +51,8 @@ const AssignmentDetail = () => {
                 <CardTitle
                   tag="h5"
                   style={{
-                    color: x._id === "003" ? "#fff" : "none",
-                    fontFamily:'Montserrat-SemiBold'
+                    color: x._id === assignmentId ? "#fff" : "#000",
+                    fontFamily: "Montserrat-SemiBold",
                   }}
                 >
                   {x.class} - {x.section} - {x.subject}
@@ -70,8 +71,8 @@ const AssignmentDetail = () => {
                 <CardText
                   style={{
                     fontSize: 14,
-                    color: x._id === "003" ? "#fff" : "none",
-                    fontFamily:'Montserrat-SemiBold'
+                    color: x._id === assignmentId ? "#fff" : "#000",
+                    fontFamily: "Montserrat-SemiBold",
                   }}
                 >
                   {x.name}
@@ -82,8 +83,8 @@ const AssignmentDetail = () => {
                     <span
                       style={{
                         fontSize: 10.5,
-                        fontFamily:'Montserrat-SemiBold',
-                        color: x._id === "003" ? "#fff" : "GrayText",
+                        fontFamily: "Montserrat-SemiBold",
+                        color: x._id === assignmentId ? "#fff" : "GrayText",
                       }}
                     >
                       {x.assignmentDate}
@@ -93,8 +94,8 @@ const AssignmentDetail = () => {
                     <span
                       style={{
                         fontSize: 10.5,
-                        fontFamily:'Montserrat-SemiBold',
-                        color: x._id === "003" ? "#fff" : "GrayText",
+                        fontFamily: "Montserrat-SemiBold",
+                        color: x._id === assignmentId ? "#fff" : "GrayText",
                       }}
                     >
                       Submit On : {x.finalDate}

@@ -4,7 +4,7 @@ import StudentData from "../data/StudentData.json";
 import ProfileImage from "../assets/Deafult-Profile-Pitcher.png";
 import { Col, Container, Input, Row } from "reactstrap";
 
-const StudentList = () => {
+const StudentList = ({studentChange, name}) => {
   function submited(key) {
     let data;
 
@@ -54,7 +54,7 @@ const StudentList = () => {
                 style={{
                   color: "#000",
                   // fontWeight: "bold",
-                  fontFamily:'Montserrat-SemiBold'
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 TOTAL : {StudentData.length}
@@ -65,7 +65,7 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#5cb85c",
-                  fontFamily:'Montserrat-SemiBold'
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 SUBMIT : {submited("submit")}
@@ -76,7 +76,7 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#d8534f",
-                  fontFamily:'Montserrat-SemiBold'
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 NOTSUBMIT : {submited("unsubmit")}
@@ -87,7 +87,7 @@ const StudentList = () => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#ee6305",
-                  fontFamily:'Montserrat-SemiBold'
+                  fontFamily: "Montserrat-SemiBold",
                 }}
               >
                 REVIEW : {submited("correction")}
@@ -113,9 +113,9 @@ const StudentList = () => {
                 Name
               </span> */}
             </Col>
-            
+
             <Col lg={4}>
-            <Input type={"text"} placeholder={"Status"} />
+              <Input type={"text"} placeholder={"Status"} />
               {/* <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
                 Status
               </span> */}
@@ -129,6 +129,7 @@ const StudentList = () => {
               style={{
                 padding: "8px",
               }}
+              onClick={() => studentChange(x.name)}
             >
               <Row>
                 <Col lg={6}>
@@ -139,12 +140,12 @@ const StudentList = () => {
                   />
                   <span
                     style={{
-                      fontFamily:'Montserrat-SemiBold',
+                      fontFamily: "Montserrat-SemiBold",
                       marginLeft: "15px",
-                      fontSize: x.name === "Nathakumar" ? 16 : 14,
+                      fontSize: x.name === name ? 16 : 14,
                       // fontWeight: x.name === "Nathakumar" ? "600" : null,
                       letterSpacing: 0.5,
-                      color: x.name === "Nathakumar" ? "#007bff" : "none",
+                      color: x.name === name ? "#007bff" : "#000",
                     }}
                   >
                     {x.name}
@@ -173,24 +174,25 @@ const StudentList = () => {
                     className={"indicator"}
                   /> */}
                   <span
-                      style={{
-                        fontSize: 12,
-                        color: x.correction === true
+                    style={{
+                      fontSize: 12,
+                      color:
+                        x.correction === true
                           ? "#ee6305"
                           : x.submit === true
                           ? "#5cb85c"
                           : "#d8534f",
-                          // letterSpacing:0.3,
-                          fontFamily:'Montserrat-SemiBold',
-                          fontWeight:'bold'
-                      }}
-                    >
-                      {x.correction === true
-                        ? "REVIEW"
-                        : x.submit === true
-                        ? "SUBMIT"
-                        : "NOT SUBMIT"}
-                    </span>
+                      // letterSpacing:0.3,
+                      fontFamily: "Montserrat-SemiBold",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {x.correction === true
+                      ? "REVIEW"
+                      : x.submit === true
+                      ? "SUBMIT"
+                      : "NOT SUBMIT"}
+                  </span>
                   {/* </div> */}
                 </Col>
               </Row>

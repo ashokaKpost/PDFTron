@@ -3,8 +3,8 @@ import WebViewer from "@pdftron/webviewer";
 import { Button, Col, Row } from "reactstrap";
 
 
-function PdfTool({ url , assignment}) {
-  console.log(url, "url");
+function PdfTool({ url , name, studentName, className, section}) {
+  
   const viewer = useRef(null);
 
   // if using a class, equivalent of componentDidMount
@@ -49,21 +49,27 @@ function PdfTool({ url , assignment}) {
       <div className="header" style={{ marginTop: "5px", textAlign: "center" }}>
         <Row>
           <Col lg={4}>
-            <span style={{ fontSize: 15, fontFamily:'Montserrat-SemiBold', color: "gray" }}>
+            <span
+              style={{
+                fontSize: 15,
+                fontFamily: "Montserrat-SemiBold",
+                color: "gray",
+              }}
+            >
               Name :{" "}
               <span
                 style={{
                   color: "#000",
                 }}
               >
-                Nathakumar
+                {studentName}
               </span>
             </span>
             <span
               style={{
                 fontSize: 15,
                 marginLeft: "10px",
-                fontFamily:'Montserrat-SemiBold',
+                fontFamily: "Montserrat-SemiBold",
                 color: "gray",
               }}
             >
@@ -73,17 +79,21 @@ function PdfTool({ url , assignment}) {
                   color: "#000",
                 }}
               >
-                XI - C
+              {className} - {section}
               </span>
             </span>
           </Col>
           <Col lg={4}>
-            <span style={{ fontSize: 18, fontFamily:'Montserrat-SemiBold' }}>
-              {'Units and Measurements'.toUpperCase()}
+            <span style={{ fontSize: 18, fontFamily: "Montserrat-SemiBold" }}>
+              {name.toUpperCase()}
             </span>
           </Col>
           <Col lg={4}>
-            <Button outline color="primary" style={{fontFamily:'Montserrat-SemiBold'}}>
+            <Button
+              outline
+              color="primary"
+              style={{ fontFamily: "Montserrat-SemiBold" }}
+            >
               Submit
             </Button>
           </Col>
