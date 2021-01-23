@@ -79,7 +79,7 @@ const StudentList = () => {
                   fontFamily:'Montserrat-SemiBold'
                 }}
               >
-                UNSUBMIT : {submited("unsubmit")}
+                NOTSUBMIT : {submited("unsubmit")}
               </p>
             </Col>
             <Col lg={3}>
