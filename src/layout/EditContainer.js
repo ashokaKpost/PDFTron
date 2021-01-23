@@ -20,13 +20,10 @@ const EditContainer = () => {
   const asignmentChange = (data) => {
     setAssignment(data);
   };
-  
-  console.log(assignment, 'assignmaent');
   const studentChange = (stu) => {
     setStudent(stu);
   };
-
-  console.log(student, "student");
+  
   return (
     <Container
       fluid={true}
@@ -34,7 +31,10 @@ const EditContainer = () => {
     >
       <Row>
         <Col lg={2}>
-          <AssignmentDetail assignmentChange={asignmentChange} assignmentId={assignment._id} />
+          <AssignmentDetail
+            assignmentChange={asignmentChange}
+            assignmentId={assignment._id}
+          />
         </Col>
         <Col lg={7} style={{ height: "860px" }}>
           <PdfTool

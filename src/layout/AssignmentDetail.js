@@ -44,6 +44,7 @@ const AssignmentDetail = ({ assignmentChange, assignmentId }) => {
                 boxShadow: "0px 0px 4px #999",
                 backgroundColor: x._id === assignmentId ? "#007bff" : "#fff",
                 borderRadius: "10px",
+                cursor:'pointer'
               }}
               key={i}
             >

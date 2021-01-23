@@ -4,7 +4,7 @@ import StudentData from "../data/StudentData.json";
 import ProfileImage from "../assets/Deafult-Profile-Pitcher.png";
 import { Col, Container, Input, Row } from "reactstrap";
 
-const StudentList = ({studentChange, name}) => {
+const StudentList = ({ studentChange, name }) => {
   function submited(key) {
     let data;
 
@@ -53,7 +53,6 @@ const StudentList = ({studentChange, name}) => {
                 className={"studentDetailHeader1"}
                 style={{
                   color: "#000",
-                  // fontWeight: "bold",
                   fontFamily: "Montserrat-SemiBold",
                 }}
               >
@@ -101,24 +100,16 @@ const StudentList = ({studentChange, name}) => {
         style={{
           height: "780px",
           borderRadius: "10px",
-
-          // backgroundColor: "#f1f3f5"
         }}
       >
         <div style={{ padding: "5px" }}>
           <Row>
             <Col lg={8}>
               <Input type={"text"} placeholder={"Name"} />
-              {/* <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
-                Name
-              </span> */}
             </Col>
 
             <Col lg={4}>
               <Input type={"text"} placeholder={"Status"} />
-              {/* <span className={"studentDetailHeader"} style={{ fontSize: 16 }}>
-                Status
-              </span> */}
             </Col>
           </Row>
           <hr />
@@ -128,8 +119,10 @@ const StudentList = ({studentChange, name}) => {
             <div
               style={{
                 padding: "8px",
+                cursor: "pointer",
               }}
               onClick={() => studentChange(x.name)}
+              key={i}
             >
               <Row>
                 <Col lg={6}>
@@ -143,7 +136,6 @@ const StudentList = ({studentChange, name}) => {
                       fontFamily: "Montserrat-SemiBold",
                       marginLeft: "15px",
                       fontSize: x.name === name ? 16 : 14,
-                      // fontWeight: x.name === "Nathakumar" ? "600" : null,
                       letterSpacing: 0.5,
                       color: x.name === name ? "#007bff" : "#000",
                     }}
@@ -153,26 +145,6 @@ const StudentList = ({studentChange, name}) => {
                 </Col>
                 <Col lg={2}></Col>
                 <Col lg={4}>
-                  {/* <div
-                    style={{
-                      width: "20px",
-                      height: "20px",
-                      // paddingBottom: "25px",
-                      // backgroundColor:x.submit === true ? '#5cb85c' :'#d8534f',
-                      backgroundColor:
-                        x.correction === true
-                          ? "#ee6305"
-                          : x.submit === true
-                          ? "#5cb85c"
-                          : "#d8534f",
-                      borderRadius: "60px",
-                      marginLeft: "15px",
-                      marginTop: "7px",
-                      // textAlign: "center",
-                      boxShadow: "0px 0px 4px #999",
-                    }}
-                    className={"indicator"}
-                  /> */}
                   <span
                     style={{
                       fontSize: 12,
@@ -182,7 +154,6 @@ const StudentList = ({studentChange, name}) => {
                           : x.submit === true
                           ? "#5cb85c"
                           : "#d8534f",
-                      // letterSpacing:0.3,
                       fontFamily: "Montserrat-SemiBold",
                       fontWeight: "bold",
                     }}
@@ -193,7 +164,6 @@ const StudentList = ({studentChange, name}) => {
                       ? "SUBMIT"
                       : "NOT SUBMIT"}
                   </span>
-                  {/* </div> */}
                 </Col>
               </Row>
             </div>
