@@ -150,8 +150,8 @@ const StudentList = () => {
                     {x.name}
                   </span>
                 </Col>
-                <Col lg={3}></Col>
-                <Col lg={2}>
+                <Col lg={2}></Col>
+                <Col lg={4}>
                   {/* <div
                     style={{
                       width: "20px",
@@ -181,14 +181,15 @@ const StudentList = () => {
                           ? "#5cb85c"
                           : "#d8534f",
                           // letterSpacing:0.3,
-                          fontFamily:'Montserrat-SemiBold'
+                          fontFamily:'Montserrat-SemiBold',
+                          fontWeight:'bold'
                       }}
                     >
                       {x.correction === true
                         ? "REVIEW"
                         : x.submit === true
                         ? "SUBMIT"
-                        : "UNSUBMIT"}
+                        : "NOT SUBMIT"}
                     </span>
                   {/* </div> */}
                 </Col>

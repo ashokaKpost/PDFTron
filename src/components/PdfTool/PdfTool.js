@@ -79,7 +79,7 @@ function PdfTool({ url , assignment}) {
           </Col>
           <Col lg={4}>
             <span style={{ fontSize: 18, fontFamily:'Montserrat-SemiBold' }}>
-              Units and Measurements
+              {'Units and Measurements'.toUpperCase()}
             </span>
           </Col>
           <Col lg={4}>

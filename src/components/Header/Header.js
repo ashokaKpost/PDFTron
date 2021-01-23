@@ -21,8 +21,8 @@ const Header = () => {
           src={Logo}
           alt={""}
           style={{
-            width: "120px",
-            height: "50px",
+            width: "110px",
+            height: "45px",
             marginLeft: "10px",
             color: 'tint("#006600")',
           }}

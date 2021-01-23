@@ -81,7 +81,7 @@ const AssignmentDetail = () => {
                   <Col lg={5}>
                     <span
                       style={{
-                        fontSize: 11.5,
+                        fontSize: 10.5,
                         fontFamily:'Montserrat-SemiBold',
                         color: x._id === "003" ? "#fff" : "GrayText",
                       }}
@@ -92,12 +92,12 @@ const AssignmentDetail = () => {
                   <Col lg={7}>
                     <span
                       style={{
-                        fontSize: 11.5,
+                        fontSize: 10.5,
                         fontFamily:'Montserrat-SemiBold',
                         color: x._id === "003" ? "#fff" : "GrayText",
                       }}
                     >
-                      Submit On: {x.finalDate}
+                      Submit On : {x.finalDate}
                     </span>
                   </Col>
                 </Row>
